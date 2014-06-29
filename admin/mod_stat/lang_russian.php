@@ -1,0 +1,353 @@
+<?php
+
+// Menü
+
+$FS_PHRASES[stat_menu_title] = 'СТАТИСТИКА';
+$FS_PHRASES[stat_menu_page] = 'Статистика страниц';
+$FS_PHRASES[stat_menu_article] = 'Статистика статей';
+$FS_PHRASES[stat_menu_news] = 'Статистика новостей';
+$FS_PHRASES[stat_menu_gallery] = 'Статистика галереи';
+$FS_PHRASES[stat_menu_search] = 'Статистика поиска';
+$FS_PHRASES[stat_menu_user] = 'Статистика посетителей';
+$FS_PHRASES[stat_menu_bots] = 'Статистика ботов';
+$FS_PHRASES[stat_menu_referer] = 'Статистика рефералов';
+$FS_PHRASES[stat_menu_div] = 'Остальная статистика';
+
+// Page
+
+$FS_PHRASES[stat_page_title] = 'СТАТИСТИКА СТРАНИЦ';
+$FS_PHRASES[stat_page_year] = 'Год';
+$FS_PHRASES[stat_page_month] = 'Месяц';
+$FS_PHRASES[stat_page_day] = 'День';
+$FS_PHRASES[stat_page_hits] = 'Переходов';
+$FS_PHRASES[stat_page_visits] = 'Посетителей';
+$FS_PHRASES[stat_page_stat] = 'Статистика';
+$FS_PHRASES[stat_page_monthnames][1] = 'Январь';
+$FS_PHRASES[stat_page_monthnames][2] = 'Февраль';
+$FS_PHRASES[stat_page_monthnames][3] = 'Март';
+$FS_PHRASES[stat_page_monthnames][4] = 'Апрель';
+$FS_PHRASES[stat_page_monthnames][5] = 'Май';
+$FS_PHRASES[stat_page_monthnames][6] = 'Июнь';
+$FS_PHRASES[stat_page_monthnames][7] = 'Июль';
+$FS_PHRASES[stat_page_monthnames][8] = 'Август';
+$FS_PHRASES[stat_page_monthnames][9] = 'Сентябрь';
+$FS_PHRASES[stat_page_monthnames][10] = 'Октябрь';
+$FS_PHRASES[stat_page_monthnames][11] = 'Ноябрь';
+$FS_PHRASES[stat_page_monthnames][12] = 'Декабрь';
+$FS_PHRASES[stat_page_daynames][0] = 'Воскресенье';
+$FS_PHRASES[stat_page_daynames][1] = 'Понедельник';
+$FS_PHRASES[stat_page_daynames][2] = 'Вторник';
+$FS_PHRASES[stat_page_daynames][3] = 'Среда';
+$FS_PHRASES[stat_page_daynames][4] = 'Четверг';
+$FS_PHRASES[stat_page_daynames][5] = 'Пятница';
+$FS_PHRASES[stat_page_daynames][6] = 'Суббота';
+$FS_PHRASES[stat_page_average] = 'В среднем';
+$FS_PHRASES[stat_page_article] = 'Статистика статей';
+$FS_PHRASES[stat_page_news] = 'Статистика новостей';
+$FS_PHRASES[stat_page_gallery] = 'Статистика галереи';
+$FS_PHRASES[stat_page_referer] = 'Статистика рефералов';
+
+// Artikel
+
+$FS_PHRASES[stat_article_title] = 'СТАТИСТИКА СТАТЕЙ';
+$FS_PHRASES[stat_article_article] = 'Статья';
+$FS_PHRASES[stat_page_perday] = 'за день';
+
+// News
+
+$FS_PHRASES[stat_news_title] = 'СТАТИСТИКА НОВОСТЕЙ';
+$FS_PHRASES[stat_news_news] = 'Новости';
+
+// Gallery
+
+$FS_PHRASES[stat_gallery_title] = 'СТАТИСТИКА ГАЛЕРЕИ';
+$FS_PHRASES[stat_gallery_gallery] = 'Галерея';
+$FS_PHRASES[stat_gallery_link] = 'Ссылка';
+$FS_PHRASES[stat_gallery_pic] = 'Изображение';
+
+// Suche
+
+$FS_PHRASES[stat_search_title] = 'СТАТИСТИКА ПОИСКА';
+$FS_PHRASES[stat_search_keyword] = 'Ключевые слова поиска';
+$FS_PHRASES[stat_search_hits] = 'Запросы';
+$FS_PHRASES[stat_search_last] = 'Последний запрос';
+
+// User
+
+$FS_PHRASES[stat_user_title] = 'СТАТИСТИКА ПОЛЬЗОВАТЕЛЕЙ';
+$FS_PHRASES[stat_user_date] = 'Дата';
+$FS_PHRASES[stat_user_first] = 'Первое посещение';
+$FS_PHRASES[stat_user_last] = 'Последнее посещение';
+$FS_PHRASES[stat_user_hits] = 'Посещение страниц';
+$FS_PHRASES[stat_user_ip] = 'IP-адрес';
+$FS_PHRASES[stat_user_day] = 'Все посетители от %m %d, %Y';
+$FS_PHRASES[stat_user_last50] = 'Последние 50 посетителей';
+$FS_PHRASES[stat_user_lang] = 'Язык';
+
+// Bots
+
+$FS_PHRASES[stat_bots_title] = 'СТАТИСТИКА БОТОВ';
+$FS_PHRASES[stat_bots_agent] = 'Бот';
+$FS_PHRASES[stat_bots_timeline] = 'История (последние 50)';
+$FS_PHRASES[stat_bots_bybot] = 'Боты';
+
+// Referer
+
+$FS_PHRASES[stat_referer_title] = 'СТАТИСТИКА РЕФЕРАЛОВ';
+$FS_PHRASES[stat_referer_referer] = 'Реферал';
+$FS_PHRASES[stat_referer_hits] = 'Посещения';
+$FS_PHRASES[stat_referer_direct] = 'Прямые визиты';
+$FS_PHRASES[stat_referer_top50] = 'Лучшие 50 рефералов';
+$FS_PHRASES[stat_referer_day] = 'Реферал от %m %d, %Y';
+
+// Sonstige
+
+$FS_PHRASES[stat_div_title] = 'ОСТАЛЬНАЯ СТАТИСТИКА';
+$FS_PHRASES[stat_div_agents] = 'Статистика браузеров';
+$FS_PHRASES[stat_div_agent] = 'Браузер';
+$FS_PHRASES[stat_div_percent] = 'Процент';
+$FS_PHRASES[stat_div_detail] = 'Детали';
+$FS_PHRASES[stat_div_langs] = 'Язык';
+$FS_PHRASES[stat_div_country] = 'Страна';
+
+$FS_PHRASES[stat_div_countrys][AF] = 'Афганистан';
+$FS_PHRASES[stat_div_countrys][AL] = 'Албания';
+$FS_PHRASES[stat_div_countrys][DZ] = 'Алжир';
+$FS_PHRASES[stat_div_countrys]['AS'] = 'Американское Самоа';
+$FS_PHRASES[stat_div_countrys][AD] = 'Андорра';
+$FS_PHRASES[stat_div_countrys][AO] = 'Ангола';
+$FS_PHRASES[stat_div_countrys][AI] = 'Ангилья';
+$FS_PHRASES[stat_div_countrys][AQ] = 'Антарктика (территория южнее 60 градусов)';
+$FS_PHRASES[stat_div_countrys][AG] = 'Антигуа и Барбуды';
+$FS_PHRASES[stat_div_countrys][AR] = 'Аргентина';
+$FS_PHRASES[stat_div_countrys][AM] = 'Армения';
+$FS_PHRASES[stat_div_countrys][AW] = 'Аруба';
+$FS_PHRASES[stat_div_countrys][AU] = 'Австралия';
+$FS_PHRASES[stat_div_countrys][AT] = 'Австрия';
+$FS_PHRASES[stat_div_countrys][AZ] = 'Азербайджан';
+$FS_PHRASES[stat_div_countrys][BS] = 'Багамы';
+$FS_PHRASES[stat_div_countrys][BH] = 'Бахрейн';
+$FS_PHRASES[stat_div_countrys][BD] = 'Бангладеш';
+$FS_PHRASES[stat_div_countrys][BB] = 'Барбадос';
+$FS_PHRASES[stat_div_countrys][BY] = 'Беларусь';
+$FS_PHRASES[stat_div_countrys][BE] = 'Бельгия';
+$FS_PHRASES[stat_div_countrys][BZ] = 'Белиз';
+$FS_PHRASES[stat_div_countrys][BJ] = 'Бенин';
+$FS_PHRASES[stat_div_countrys][BM] = 'Бермуда';
+$FS_PHRASES[stat_div_countrys][BT] = 'Бутан';
+$FS_PHRASES[stat_div_countrys][BO] = 'Боливия';
+$FS_PHRASES[stat_div_countrys][BA] = 'Босния и Герцеговина';
+$FS_PHRASES[stat_div_countrys][BW] = 'Ботсвана';
+$FS_PHRASES[stat_div_countrys][BV] = 'Остров Буве';
+$FS_PHRASES[stat_div_countrys][BR] = 'Бразилия';
+$FS_PHRASES[stat_div_countrys][IO] = 'Британская территория в Индийском океане (архипелаг Чагос)';
+$FS_PHRASES[stat_div_countrys][VG] = 'Британские Виргинские Острова';
+$FS_PHRASES[stat_div_countrys][BN] = 'Бруней-Даруссалам';
+$FS_PHRASES[stat_div_countrys][BG] = 'Болгария';
+$FS_PHRASES[stat_div_countrys][BF] = 'Буркина-Фасо';
+$FS_PHRASES[stat_div_countrys][BI] = 'Бурунди';
+$FS_PHRASES[stat_div_countrys][KH] = 'Камбоджа';
+$FS_PHRASES[stat_div_countrys][CM] = 'Камерун';
+$FS_PHRASES[stat_div_countrys][CA] = 'Канада';
+$FS_PHRASES[stat_div_countrys][CV] = 'Кабо-Верде';
+$FS_PHRASES[stat_div_countrys][KY] = 'Каймановы острова';
+$FS_PHRASES[stat_div_countrys][CF] = 'Центарльная африканская республика';
+$FS_PHRASES[stat_div_countrys][TD] = 'Чад';
+$FS_PHRASES[stat_div_countrys][CL] = 'Чили';
+$FS_PHRASES[stat_div_countrys][CN] = 'Китай';
+$FS_PHRASES[stat_div_countrys][CX] = 'Остров Рождества';
+$FS_PHRASES[stat_div_countrys][CC] = 'Кокосовы острова';
+$FS_PHRASES[stat_div_countrys][CO] = 'Колумбия';
+$FS_PHRASES[stat_div_countrys][KM] = 'Коморские острова';
+$FS_PHRASES[stat_div_countrys][CD] = 'Демократическая республика Конго';
+$FS_PHRASES[stat_div_countrys][CG] = 'Народная республика Конго';
+$FS_PHRASES[stat_div_countrys][CK] = 'Острова Кука';
+$FS_PHRASES[stat_div_countrys][CR] = 'Коста-Рика';
+$FS_PHRASES[stat_div_countrys][CI] = 'Кот-д’Ивуар, Берег Слоновой Кости';
+$FS_PHRASES[stat_div_countrys][CU] = 'Куба';
+$FS_PHRASES[stat_div_countrys][CY] = 'Кипр';
+$FS_PHRASES[stat_div_countrys][CZ] = 'Чехия';
+$FS_PHRASES[stat_div_countrys][DK] = 'Дания';
+$FS_PHRASES[stat_div_countrys][DJ] = 'Джибути';
+$FS_PHRASES[stat_div_countrys][DM] = 'Доминика';
+$FS_PHRASES[stat_div_countrys]['DO'] = 'Доминиканская республика';
+$FS_PHRASES[stat_div_countrys][EC] = 'Эквадор';
+$FS_PHRASES[stat_div_countrys][EG] = 'Египет';
+$FS_PHRASES[stat_div_countrys][SV] = 'Эль-Сальвадор';
+$FS_PHRASES[stat_div_countrys][GQ] = 'Экавториальная Гвинея';
+$FS_PHRASES[stat_div_countrys][ER] = 'Эритрея';
+$FS_PHRASES[stat_div_countrys][EE] = 'Эстония';
+$FS_PHRASES[stat_div_countrys][ET] = 'Эфиопия';
+$FS_PHRASES[stat_div_countrys][FO] = 'Фарерские острова';
+$FS_PHRASES[stat_div_countrys][FK] = 'Фолклендские (Мальвинские) острова';
+$FS_PHRASES[stat_div_countrys][FJ] = 'Фиджи';
+$FS_PHRASES[stat_div_countrys][FI] = 'Финляндия';
+$FS_PHRASES[stat_div_countrys][FR] = 'Франция';
+$FS_PHRASES[stat_div_countrys][GF] = 'Французская Гвиана';
+$FS_PHRASES[stat_div_countrys][PF] = 'Французская Полинезия';
+$FS_PHRASES[stat_div_countrys][TF] = 'Южные территории Франции';
+$FS_PHRASES[stat_div_countrys][GA] = 'Габон';
+$FS_PHRASES[stat_div_countrys][GM] = 'Гамбия';
+$FS_PHRASES[stat_div_countrys][GE] = 'Грузия';
+$FS_PHRASES[stat_div_countrys][DE] = 'Германия';
+$FS_PHRASES[stat_div_countrys][GH] = 'Гана';
+$FS_PHRASES[stat_div_countrys][GI] = 'Гибралтар';
+$FS_PHRASES[stat_div_countrys][GR] = 'Греция';
+$FS_PHRASES[stat_div_countrys][GL] = 'Гренландия';
+$FS_PHRASES[stat_div_countrys][GD] = 'Гренада';
+$FS_PHRASES[stat_div_countrys][GP] = 'Гваделупа';
+$FS_PHRASES[stat_div_countrys][GU] = 'Гуам';
+$FS_PHRASES[stat_div_countrys][GT] = 'Гватемала';
+$FS_PHRASES[stat_div_countrys][GN] = 'Гвинея';
+$FS_PHRASES[stat_div_countrys][GW] = 'Гвинея-Биссау';
+$FS_PHRASES[stat_div_countrys][GY] = 'Гайяна';
+$FS_PHRASES[stat_div_countrys][HT] = 'Гаити';
+$FS_PHRASES[stat_div_countrys][HM] = 'Острова Хёрд и Макдоналд';
+$FS_PHRASES[stat_div_countrys][VA] = 'Святой престол (Ватикан)';
+$FS_PHRASES[stat_div_countrys][HN] = 'Гондурас';
+$FS_PHRASES[stat_div_countrys][HK] = 'Гонг-Конг';
+$FS_PHRASES[stat_div_countrys][HR] = 'Хорватия';
+$FS_PHRASES[stat_div_countrys][HU] = 'Венгрия';
+$FS_PHRASES[stat_div_countrys][IS] = 'Исландия';
+$FS_PHRASES[stat_div_countrys][IN] = 'Индия';
+$FS_PHRASES[stat_div_countrys][ID] = 'Индонезия';
+$FS_PHRASES[stat_div_countrys][IR] = 'Иран';
+$FS_PHRASES[stat_div_countrys][IQ] = 'Ирак';
+$FS_PHRASES[stat_div_countrys][IE] = 'Ирландия';
+$FS_PHRASES[stat_div_countrys][IL] = 'Израиль';
+$FS_PHRASES[stat_div_countrys][IT] = 'Италия';
+$FS_PHRASES[stat_div_countrys][JM] = 'Ямайка';
+$FS_PHRASES[stat_div_countrys][JP] = 'Япония';
+$FS_PHRASES[stat_div_countrys][JO] = 'Иордания';
+$FS_PHRASES[stat_div_countrys][KZ] = 'Казахстан';
+$FS_PHRASES[stat_div_countrys][KE] = 'Кения';
+$FS_PHRASES[stat_div_countrys][KI] = 'Кирибати';
+$FS_PHRASES[stat_div_countrys][KP] = 'Демократическая народная республика Корея';
+$FS_PHRASES[stat_div_countrys][KR] = 'Корея';
+$FS_PHRASES[stat_div_countrys][KW] = 'Кувейт';
+$FS_PHRASES[stat_div_countrys][KG] = 'Киргизия';
+$FS_PHRASES[stat_div_countrys][LA] = 'Лаос';
+$FS_PHRASES[stat_div_countrys][LV] = 'Латвия';
+$FS_PHRASES[stat_div_countrys][LB] = 'Ливан';
+$FS_PHRASES[stat_div_countrys][LS] = 'Лесото';
+$FS_PHRASES[stat_div_countrys][LR] = 'Либерия';
+$FS_PHRASES[stat_div_countrys][LY] = 'Ливанская арабская Джамахирия';
+$FS_PHRASES[stat_div_countrys][LI] = 'Лихтенштейн';
+$FS_PHRASES[stat_div_countrys][LT] = 'Литва';
+$FS_PHRASES[stat_div_countrys][LU] = 'Люксембург';
+$FS_PHRASES[stat_div_countrys][MO] = 'Макао';
+$FS_PHRASES[stat_div_countrys][MK] = 'Македония';
+$FS_PHRASES[stat_div_countrys][MG] = 'Мадагаскар';
+$FS_PHRASES[stat_div_countrys][MW] = 'Малави';
+$FS_PHRASES[stat_div_countrys][MY] = 'Малайзия';
+$FS_PHRASES[stat_div_countrys][MV] = 'Мальдивы';
+$FS_PHRASES[stat_div_countrys][ML] = 'Мали';
+$FS_PHRASES[stat_div_countrys][MT] = 'Мальта';
+$FS_PHRASES[stat_div_countrys][MH] = 'Маршалловы Острова';
+$FS_PHRASES[stat_div_countrys][MQ] = 'Мартинике';
+$FS_PHRASES[stat_div_countrys][MR] = 'Мавритания';
+$FS_PHRASES[stat_div_countrys][MU] = 'Маврикия';
+$FS_PHRASES[stat_div_countrys][YT] = 'Майотта';
+$FS_PHRASES[stat_div_countrys][MX] = 'Мексика';
+$FS_PHRASES[stat_div_countrys][FM] = 'Микронезия';
+$FS_PHRASES[stat_div_countrys][MD] = 'Молдова';
+$FS_PHRASES[stat_div_countrys][MC] = 'Монако';
+$FS_PHRASES[stat_div_countrys][MN] = 'Монголия';
+$FS_PHRASES[stat_div_countrys][MS] = 'Монсеррат';
+$FS_PHRASES[stat_div_countrys][MA] = 'Марокко';
+$FS_PHRASES[stat_div_countrys][MZ] = 'Мозамбик';
+$FS_PHRASES[stat_div_countrys][MM] = 'Мьянма';
+$FS_PHRASES[stat_div_countrys][NA] = 'Намибия';
+$FS_PHRASES[stat_div_countrys][NR] = 'Науру';
+$FS_PHRASES[stat_div_countrys][NP] = 'Непал';
+$FS_PHRASES[stat_div_countrys][AN] = 'Нидерландские Антильские острова';
+$FS_PHRASES[stat_div_countrys][NL] = 'Нидерланды';
+$FS_PHRASES[stat_div_countrys][NC] = 'Новая Каледония';
+$FS_PHRASES[stat_div_countrys][NZ] = 'Новая Зеландия';
+$FS_PHRASES[stat_div_countrys][NI] = 'Никарагуа';
+$FS_PHRASES[stat_div_countrys][NE] = 'Нигер';
+$FS_PHRASES[stat_div_countrys][NG] = 'Нигерия';
+$FS_PHRASES[stat_div_countrys][NU] = 'Ниуэ';
+$FS_PHRASES[stat_div_countrys][NF] = 'Остров Норфолк';
+$FS_PHRASES[stat_div_countrys][MP] = 'Северные Марианские острова';
+$FS_PHRASES[stat_div_countrys][NO] = 'Норвегия';
+$FS_PHRASES[stat_div_countrys][OM] = 'Оман';
+$FS_PHRASES[stat_div_countrys][PK] = 'Пакистан';
+$FS_PHRASES[stat_div_countrys][PW] = 'Палау';
+$FS_PHRASES[stat_div_countrys][PS] = 'Занятая палестинская территория';
+$FS_PHRASES[stat_div_countrys][PA] = 'Панама';
+$FS_PHRASES[stat_div_countrys][PG] = 'Папуа-Новая Гвинея';
+$FS_PHRASES[stat_div_countrys][PY] = 'Парагвай';
+$FS_PHRASES[stat_div_countrys][PE] = 'Перу';
+$FS_PHRASES[stat_div_countrys][PH] = 'Филиппины';
+$FS_PHRASES[stat_div_countrys][PN] = 'Острова Питкэрн';
+$FS_PHRASES[stat_div_countrys][PL] = 'Польша';
+$FS_PHRASES[stat_div_countrys][PT] = 'Португалия';
+$FS_PHRASES[stat_div_countrys][PR] = 'Пуэрто-Рико';
+$FS_PHRASES[stat_div_countrys][QA] = 'Катар';
+$FS_PHRASES[stat_div_countrys][RE] = 'Реюньон';
+$FS_PHRASES[stat_div_countrys][RO] = 'Румыния';
+$FS_PHRASES[stat_div_countrys][RU] = 'Российская Федерация';
+$FS_PHRASES[stat_div_countrys][RW] = 'Руанда';
+$FS_PHRASES[stat_div_countrys][SH] = 'Остров Святой Елены';
+$FS_PHRASES[stat_div_countrys][KN] = 'Сент-Китс и Невис';
+$FS_PHRASES[stat_div_countrys][LC] = 'Сент-Люсия';
+$FS_PHRASES[stat_div_countrys][PM] = 'Сен-Пьер и Микелон';
+$FS_PHRASES[stat_div_countrys][VC] = 'Сент-Винсент и Гренадины';
+$FS_PHRASES[stat_div_countrys][WS] = 'Самоа';
+$FS_PHRASES[stat_div_countrys][SM] = 'Сан-Марино';
+$FS_PHRASES[stat_div_countrys][ST] = 'Сан-Томе и Принсипи';
+$FS_PHRASES[stat_div_countrys][SA] = 'Саудовская Аравия';
+$FS_PHRASES[stat_div_countrys][SN] = 'Сенегал';
+$FS_PHRASES[stat_div_countrys][CS] = 'Сербия и Черногория';
+$FS_PHRASES[stat_div_countrys][SC] = 'Сейшелы';
+$FS_PHRASES[stat_div_countrys][SL] = 'Сьерра-Леоне';
+$FS_PHRASES[stat_div_countrys][SG] = 'Сингапур';
+$FS_PHRASES[stat_div_countrys][SK] = 'Словакия';
+$FS_PHRASES[stat_div_countrys][SI] = 'Словения';
+$FS_PHRASES[stat_div_countrys][SB] = 'Соломоновы острова';
+$FS_PHRASES[stat_div_countrys][SO] = 'Сомали';
+$FS_PHRASES[stat_div_countrys][ZA] = 'Южная Африка';
+$FS_PHRASES[stat_div_countrys][GS] = 'Южная Георгия и Южные Сандвичевы острова';
+$FS_PHRASES[stat_div_countrys][ES] = 'Испания';
+$FS_PHRASES[stat_div_countrys][LK] = 'Шри-Ланка';
+$FS_PHRASES[stat_div_countrys][SD] = 'Судан';
+$FS_PHRASES[stat_div_countrys][SR] = 'Суринам';
+$FS_PHRASES[stat_div_countrys][SJ] = 'Острова Яна Мэйена и Свальбарда';
+$FS_PHRASES[stat_div_countrys][SZ] = 'Свазиленд';
+$FS_PHRASES[stat_div_countrys][SE] = 'Швеция';
+$FS_PHRASES[stat_div_countrys][CH] = 'Швейцария';
+$FS_PHRASES[stat_div_countrys][SY] = 'Сирия';
+$FS_PHRASES[stat_div_countrys][TW] = 'Тайвань';
+$FS_PHRASES[stat_div_countrys][TJ] = 'Таджикистан';
+$FS_PHRASES[stat_div_countrys][TZ] = 'Танзания';
+$FS_PHRASES[stat_div_countrys][TH] = 'Тайланд';
+$FS_PHRASES[stat_div_countrys][TL] = 'Восточный Тимор';
+$FS_PHRASES[stat_div_countrys][TG] = 'Того';
+$FS_PHRASES[stat_div_countrys][TK] = 'Токелау';
+$FS_PHRASES[stat_div_countrys][TO] = 'Тонга';
+$FS_PHRASES[stat_div_countrys][TT] = 'Тринидад и Тобаго';
+$FS_PHRASES[stat_div_countrys][TN] = 'Тунис';
+$FS_PHRASES[stat_div_countrys][TR] = 'Турция';
+$FS_PHRASES[stat_div_countrys][TM] = 'Туркменистан';
+$FS_PHRASES[stat_div_countrys][TC] = 'Острова Тёркс и Кайкос';
+$FS_PHRASES[stat_div_countrys][TV] = 'Тувалу';
+$FS_PHRASES[stat_div_countrys][VI] = 'Американские Виргинские острова';
+$FS_PHRASES[stat_div_countrys][UG] = 'Уганда';
+$FS_PHRASES[stat_div_countrys][UA] = 'Украина';
+$FS_PHRASES[stat_div_countrys][AE] = 'Объединённые Арабские Эмираты';
+$FS_PHRASES[stat_div_countrys][GB] = 'Великобритания';
+$FS_PHRASES[stat_div_countrys][UM] = 'Малые американские острова';
+$FS_PHRASES[stat_div_countrys][US] = 'США';
+$FS_PHRASES[stat_div_countrys][UY] = 'Уругвай';
+$FS_PHRASES[stat_div_countrys][UZ] = 'Узбекистан';
+$FS_PHRASES[stat_div_countrys][VU] = 'Вануату';
+$FS_PHRASES[stat_div_countrys][VE] = 'Венесуэла';
+$FS_PHRASES[stat_div_countrys][VN] = 'Вьетнам';
+$FS_PHRASES[stat_div_countrys][WF] = 'Острова Уоллис и Футуна';
+$FS_PHRASES[stat_div_countrys][EH] = 'Западная Сахара';
+$FS_PHRASES[stat_div_countrys][YE] = 'Йемен';
+$FS_PHRASES[stat_div_countrys][ZM] = 'Замбия';
+$FS_PHRASES[stat_div_countrys][ZW] = 'Зимбабве';
+
+?>

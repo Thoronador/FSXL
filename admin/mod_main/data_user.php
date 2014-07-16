@@ -45,8 +45,10 @@ if ($_POST[action] == edit && $_POST[name] && $_POST[email])
 			// Mit neuem Passwort
 			if ($_POST[newpass])
 			{
-				$_POST[newpass] = md5($_POST[newpass]);
-				$index = mysql_query("UPDATE `$FSXL[tableset]_user` SET `name` = '$_POST[name]', `password` = '$_POST[newpass]' WHERE `id` = $_POST[userid]");
+				$userindex = mysql_query("SELECT * FROM `$FSXL[tableset]_user` WHERE `id` = '$_POST[userid]'");
+				$salt = mysql_result($userindex, 0, 'salt');
+				$md5pass = md5($_POST[newpass].$salt);
+				$index = mysql_query("UPDATE `$FSXL[tableset]_user` SET `name` = '$_POST[name]', `password` = '$md5pass' WHERE `id` = '$_POST[userid]'");
 			}
 			// Ohne Passwort
 			else

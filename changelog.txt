@@ -4,6 +4,28 @@
 **                                            **
 ************************************************
 
+***************** 05.03.11 *********************
+
+- Bugfix: Zonen ohne News werden jetzt korrekt angezeigt.
+- Galerien können jetzt versteckt werden. Versteckte Galerien erscheinen
+  nicht in der Galerieübersicht. Es wird keine Thumbnailübersicht angezeigt.
+  Es werden keine Buttons in der Detailansicht angezeigt. Die Galerie wird
+  nicht in den Headlines angezeigt.
+- Bugfix: Das Passwort eines Users kann nun wieder über den Adminbereich
+  verändert werden.
+- Bugfix: News können nun auch mit Google Chrome erstellt und verändert werden.
+- Der FSCode für Listen wurde geändert. [list=number] ist nun veraltet und sollte
+  nicht mehr verwendet werden. Stattdessen gibt es jetzt [numlist]
+- Zonen können jetzt abgeschirmt werden. Das bedeutet, dass News, Artikel und
+  Galerien die nur für diese Zone angelegt werden, nicht mehr auf der Hauptseite
+  in den Headlines erscheinen.
+- In jeder Zone können jetzt Headlines aktiviert werden. (Downloads und Links sind
+  überall gleich)
+- Der Webseitenkonfiguration wurde ein Eintrag hinzugefügt, der die URL der Webseite
+  enthält. Dieser muss ausgefüllt werden.
+- Bugfix: Relative Links, die mit ? anfangen werden jetzt beim posten einer News ins
+  Forum korrekt übernommen. Dazu muss die Webseiten URL in der Konfig eingetragen sein.
+
 ***************** 05.09.10 *********************
 
 - Es wurde ein neues System zur Altersbeschränkung von Inhalten

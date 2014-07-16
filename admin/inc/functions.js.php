@@ -603,7 +603,7 @@ if (!$db->error[error])
 			{
 				if (document.contestform.fp_code.value)
 				{
-					document.contestform.submit();
+					document.getElementByName("contestform").submit();
 					isBBCode = false;
 				}
 				else
@@ -643,14 +643,14 @@ if (!$db->error[error])
 				{
 				if (document.getElementById("type1").checked && document.newsform.fp_code.value)
 					{
-						document.newsform.submit();
+						document.getElementByName("newsform").submit();
 						isBBCode = false;
 					}
 					else
 					{
 						if(document.getElementById("type2").checked && document.newsform.html_code.value)
 						{
-							document.newsform.submit();
+							document.getElementByName("newsform").submit();
 						}
 						else
 						{
@@ -665,7 +665,7 @@ if (!$db->error[error])
 			}
 			else
 			{
-				document.newsform.submit();
+				document.getElementByName("newsform").submit();
 			}
 		}
 
@@ -691,14 +691,14 @@ if (!$db->error[error])
 			{
 				if (document.getElementById("type1").checked && document.newsform.fp_code.value)
 				{
-					document.newsform.submit();
+					document.getElementByName("newsform").submit();
 					isBBCode = false;
 				}
 				else
 				{
 					if(document.getElementById("type2").checked && document.newsform.html_code.value)
 					{
-						document.newsform.submit();
+						document.getElementByName("newsform").submit();
 					}
 					else
 					{
@@ -739,14 +739,14 @@ if (!$db->error[error])
 				{
 				if (document.getElementById("type1").checked && document.articleform.fp_code.value)
 					{
-						document.articleform.submit();
+						document.getElementByName("articleform").submit();
 						isBBCode = false;
 					}
 					else
 					{
 						if(document.getElementById("type2").checked && document.articleform.html_code.value)
 						{
-							document.articleform.submit();
+							document.getElementByName("articleform").submit();
 						}
 						else
 						{
@@ -761,7 +761,7 @@ if (!$db->error[error])
 			}
 			else
 			{
-				document.articleform.submit();
+				document.getElementByName("articleform").submit();
 			}
 		}
 
@@ -787,14 +787,14 @@ if (!$db->error[error])
 			{
 				if (document.getElementById("type1").checked && document.articleform.fp_code.value)
 				{
-					document.articleform.submit();
+					document.getElementByName("articleform").submit();
 					isBBCode = false;
 				}
 				else
 				{
 					if(document.getElementById("type2").checked && document.articleform.html_code.value)
 					{
-						document.articleform.submit();
+						document.getElementByName("articleform").submit();
 					}
 					else
 					{

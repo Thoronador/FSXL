@@ -28,6 +28,8 @@ if ($_POST[action] == "edit")
 
 	@mysql_query("UPDATE `$FSXL[tableset]_config` SET `value` = '$_POST[pagetitle]' WHERE `name` = 'pagetitle'");
 
+	@mysql_query("UPDATE `$FSXL[tableset]_config` SET `value` = '$_POST[siteurl]' WHERE `name` = 'siteurl'");
+
 	@mysql_query("UPDATE `$FSXL[tableset]_config` SET `value` = '$_POST[pageid]' WHERE `name` = 'bez'");
 
 	settype($_POST[defaultzone], 'integer');
@@ -117,6 +119,7 @@ $tpl->newTblCheckbox($FS_PHRASES[main_config_contacttojob], 'contacttojob', ($FS
 $tpl->newTblSpacer();
 $tpl->newTblHeadline($FS_PHRASES[main_config_title_siteinfos]);
 $tpl->newTblInput($FS_PHRASES[main_config_pagetitle], 'pagetitle', $FSXL[config][pagetitle], 250, $FS_PHRASES[main_config_pagetitle_sub]);
+$tpl->newTblInput($FS_PHRASES[main_config_siteurl], 'siteurl', $FSXL[config][siteurl], 250);
 $tpl->openTblSelect($FS_PHRASES[main_config_defaultzone], 'defaultzone', 250, $FS_PHRASES[main_config_defaultzone_sub]);
 $index = @mysql_query("SELECT * FROM `$FSXL[tableset]_zones` ORDER BY `name`");
 while ($zone = mysql_fetch_assoc($index))

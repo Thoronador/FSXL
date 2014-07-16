@@ -56,8 +56,10 @@ if ($_POST[title] && ($_POST[fp_code] || $_POST[html_code]) && $_POST[username])
 	$id = mysql_insert_id();
 	
 	// Newstozone einfügen
-	mysql_query("INSERT INTO `$FSXL[tableset]_newstozone` (`newsid`, `zoneid`, `catid`, `date`)
-					VALUES ($id, $_POST[zone], 0, $date)");
+	if ($_POST[zone] != 0) {
+		mysql_query("INSERT INTO `$FSXL[tableset]_newstozone` (`newsid`, `zoneid`, `catid`, `date`)
+						VALUES ($id, $_POST[zone], 0, $date)");
+	}
 	$index = mysql_query("SELECT * FROM `$FSXL[tableset]_news_catconnect` WHERE `catid` = $_POST[cat]");
 	while ($cat = mysql_fetch_assoc($index)) {
 		mysql_query("INSERT INTO `$FSXL[tableset]_newstozone` (`newsid`, `zoneid`, `catid`, `date`)

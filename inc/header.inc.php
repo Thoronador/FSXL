@@ -60,7 +60,7 @@ if ($header_tpl->match('{ticker}'))
 }
 
 // Home?
-if (!$_GET[section] && !$_GET[go] && $_SESSION[zone] == $FSXL[config][defaultzone])
+if (!$_GET[section] && !$_GET[go] && $FSXL[zones][$_SESSION[zone]][headlines] == 1)
 {
 	$ishome = true;
 	// Newsheadlines

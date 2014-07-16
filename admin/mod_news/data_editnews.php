@@ -86,8 +86,10 @@ if ($_POST[title] && ($_POST[fp_code] || $_POST[html_code]) && $_POST[username] 
 
 		// Newstozone einfügen
 		mysql_query("DELETE FROM `$FSXL[tableset]_newstozone` WHERE `newsid` = $_POST[editid]");
-		mysql_query("INSERT INTO `$FSXL[tableset]_newstozone` (`newsid`, `zoneid`, `catid`, `date`)
-						VALUES ($_POST[editid], $_POST[zone], 0, $date)");
+		if ($_POST[zone] != 0) {
+			mysql_query("INSERT INTO `$FSXL[tableset]_newstozone` (`newsid`, `zoneid`, `catid`, `date`)
+							VALUES ($_POST[editid], $_POST[zone], 0, $date)");
+		}
 		$index = mysql_query("SELECT * FROM `$FSXL[tableset]_news_catconnect` WHERE `catid` = $_POST[cat]");
 		while ($cat = mysql_fetch_assoc($index)) {
 			mysql_query("INSERT INTO `$FSXL[tableset]_newstozone` (`newsid`, `zoneid`, `catid`, `date`)

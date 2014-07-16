@@ -9,7 +9,7 @@ if ($_GET[detail])
 	if ($_SESSION[user]->isadmin)
 	{
 		$index = mysql_query("SELECT p.titel AS titel, p.text AS text, p.position AS position, p.galleryid AS galleryid, 
-						p.date AS date, g.name AS galleryname, g.regonly AS regonly, g.pics AS pics, p.id AS id, g.datum AS gallerydate, g.type AS gallerytype, g.age AS age
+						p.date AS date, g.name AS galleryname, g.regonly AS regonly, g.pics AS pics, p.id AS id, g.datum AS gallerydate, g.type AS gallerytype, g.age AS age, g.hidden as hidden
 					FROM $FSXL[tableset]_gallerypics p, $FSXL[tableset]_galleries g
 					WHERE p.id = '$_GET[detail]' AND g.id = p.galleryid");
 	}
@@ -17,7 +17,7 @@ if ($_GET[detail])
 	else
 	{
 		$index = mysql_query("SELECT p.titel AS titel, p.text AS text, p.position AS position, p.galleryid AS galleryid, 
-						p.date AS date, g.name AS galleryname, g.regonly AS regonly, g.pics AS pics, p.id AS id, g.datum AS gallerydate, g.type AS gallerytype, g.age AS age
+						p.date AS date, g.name AS galleryname, g.regonly AS regonly, g.pics AS pics, p.id AS id, g.datum AS gallerydate, g.type AS gallerytype, g.age AS age, g.hidden as hidden
 					FROM $FSXL[tableset]_gallerypics p, $FSXL[tableset]_galleries g
 					WHERE p.id = '$_GET[detail]' AND g.id = p.galleryid AND g.datum <= '$FSXL[time]' AND p.release <= '$FSXL[time]'");
 	}
@@ -104,6 +104,7 @@ if ($_GET[detail])
 				$gallery_tpl->replaceTplVar('{totalpics}', $totalpics[value]);
 				$gallery_tpl->replaceTplVar('{currentpic}', $currentpic[value]);
 
+				$gallery_tpl->switchCondition('not_hidden', ($pic[hidden]==0?true:false));
 				$gallery_tpl->switchCondition('gallery', true);
 
 				// Template ausgeben
@@ -140,7 +141,7 @@ elseif ($_GET[id])
 	// User
 	else
 	{
-		$index = mysql_query("SELECT * FROM `$FSXL[tableset]_galleries` WHERE `id` = '$_GET[id]' AND `datum` <= '$FSXL[time]'");
+		$index = mysql_query("SELECT * FROM `$FSXL[tableset]_galleries` WHERE `id` = '$_GET[id]' AND `hidden` = 0 AND `datum` <= '$FSXL[time]'");
 	}
 
 	// Falls Gallerie vorhanden
@@ -272,7 +273,7 @@ else
 		{
 			$sqladd2 = 'AND `regonly` = 0';
 		}
-		$index = mysql_query("SELECT * FROM `$FSXL[tableset]_galleries` WHERE `datum` <= $FSXL[time] $sqladd $sqladd2 ORDER BY `cat`, `datum` DESC");
+		$index = mysql_query("SELECT * FROM `$FSXL[tableset]_galleries` WHERE `datum` <= $FSXL[time] AND `hidden` = 0 $sqladd $sqladd2 ORDER BY `cat`, `datum` DESC");
 
 		// Template füllen
 		if (mysql_num_rows($index) > 0)

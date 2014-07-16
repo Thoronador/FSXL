@@ -595,8 +595,11 @@ function cleanText($text, $hard=true)
 // News für vB konvertieren
 function vBText ($text)
 {
-	$script = preg_replace("/(.*?)\/(admin){0,1}(\/){0,1}(index\.php){0,1}/i", "$1", $_SERVER[SCRIPT_NAME]);
-	$url = 'http://'.$_SERVER[SERVER_NAME].$script.'/images/imgmanager/';
+	global $FSXL;
+	$url = $FSXL[config][siteurl].'/images/imgmanager/';
+		
+	$text = preg_replace("/\[url=\?(.*?)\](.*?)\[\/url\]/i", "[url=".$FSXL[config][siteurl]."/?$1]$2[/url]", $text);
+
 	$text = preg_replace("/\[age(.*?)\](.*?)\[\/age\]/i", " ", $text);
 	$text = preg_replace("/\[img(.*?)\]([0-9]*)\[\/img\]/i", "[img]$url$2.jpg[/img]", $text);
 	$text = preg_replace("/\[img(.*?)\]([0-9]*)\.(png|gif)\[\/img\]/i", "[img]$url$2.$3[/img]", $text);
@@ -882,8 +885,9 @@ function fscode($code, $soft=false)
 
 	// Listen
 	$code = preg_replace("/\n*\[\*\]/is", "<LI>", $code);
-	$code = preg_replace("/\[list=number\](.*?)\n*\[\/list\]\n{0,1}/is", "<OL>$1</OL>", $code);
+	$code = preg_replace("/\[numlist\](.*?)\n*\[\/numlist\]\n{0,1}/is", "<OL>$1</OL>", $code);
 	$code = preg_replace("/\[list\](.*?)\n*\[\/list\]\n{0,1}/is", "<UL>$1</UL>", $code);
+	$code = preg_replace("/\[list=number\](.*?)\n*\[\/list\]\n{0,1}/is", "<OL>$1</OL>", $code); // Veraltet
 
 	// Tabellen
 	$code = preg_replace_callback("/\n{0,1}\[table(.*?)\](.*?)\[\/table\]/is", "ohtmlTable", $code);

@@ -7,10 +7,12 @@ $FSXL[title] = $FS_PHRASES[main_zone_title];
 if ($_POST[action] == "newzone" && $_POST[name])
 {
 	settype($_POST[style], 'integer');
+	$single = $_POST[single] ? 1 : 0;
+	$headlines = $_POST[headlines] ? 1 : 0;
 
 	// Zone erzeugen
-	$index = mysql_query("INSERT INTO `$FSXL[tableset]_zones` (`id`, `name`, `style`, `url`, `page`) 
-							VALUES (NULL, '$_POST[name]', $_POST[style], '$_POST[url]', '$_POST[page]')");
+	$index = mysql_query("INSERT INTO `$FSXL[tableset]_zones` (`id`, `name`, `style`, `url`, `page`, `single`, `headlines`) 
+							VALUES (NULL, '$_POST[name]', $_POST[style], '$_POST[url]', '$_POST[page]', '$single', '$headlines')");
 	if ($index) {
 		$FSXL[content] = '<div style="padding:20px; text-align:center;">'.$FS_PHRASES[main_zone_donenewzone].'</div>';
 		updateHtaccess();
@@ -26,9 +28,11 @@ elseif ($_POST[action] == "editzone" && $_POST[name] && $_POST[style])
 {
 	settype($_POST[zoneid], 'integer');
 	settype($_POST[style], 'integer');
+	$single = $_POST[single] ? 1 : 0;
+	$headlines = $_POST[headlines] ? 1 : 0;
 	
 	$index = mysql_query("UPDATE `$FSXL[tableset]_zones` SET `name` = '$_POST[name]', `style` = $_POST[style], 
-							`url` = '$_POST[url]', `page` = '$_POST[page]' WHERE `id` = $_POST[zoneid]");
+							`url` = '$_POST[url]', `page` = '$_POST[page]', `single` = '$single', `headlines` = '$headlines' WHERE `id` = $_POST[zoneid]");
 							
 	if ($index) {
 		$FSXL[content] = '<div style="padding:20px; text-align:center;">'.$FS_PHRASES[main_zone_edited].'</div>';
@@ -86,6 +90,18 @@ elseif ($_GET[id])
 						</td>
 					</tr>
 					<tr>
+						<td width="250"><b>'.$FS_PHRASES[main_zone_single].':</b><br>'.$FS_PHRASES[main_zone_single_sub].'</td>
+						<td>
+							<input type="checkbox" name="single" '.($zone[single]==1?"checked":"").' />
+						</td>
+					</tr>
+					<tr>
+						<td width="250"><b>'.$FS_PHRASES[main_zone_headlines].':</b><br>'.$FS_PHRASES[main_zone_headlines_sub].'</td>
+						<td>
+							<input type="checkbox" name="headlines" '.($zone[headlines]==1?"checked":"").' />
+						</td>
+					</tr>
+					<tr>
 						<td width="250" valign="top"><b>'.$FS_PHRASES[main_zone_style].':</b><br>'.$FS_PHRASES[main_zone_style_sub].'</td>
 						<td>
 							<select name="style" class="textinput" style="width:305px;" size="3">
@@ -139,6 +155,18 @@ else
 						<td width="250"><b>'.$FS_PHRASES[main_config_startpage].':</b><br>'.$FS_PHRASES[main_config_startpage_sub2].'</td>
 						<td>
 							<input class="textinput" name="page" style="width:300px;">
+						</td>
+					</tr>
+					<tr>
+						<td width="250"><b>'.$FS_PHRASES[main_zone_single].':</b><br>'.$FS_PHRASES[main_zone_single_sub].'</td>
+						<td>
+							<input type="checkbox" name="single" />
+						</td>
+					</tr>
+					<tr>
+						<td width="250"><b>'.$FS_PHRASES[main_zone_headlines].':</b><br>'.$FS_PHRASES[main_zone_headlines_sub].'</td>
+						<td>
+							<input type="checkbox" name="headlines" />
 						</td>
 					</tr>
 					<tr>

@@ -5,13 +5,15 @@ $index = mysql_query("SELECT `newsid` FROM `$FSXL[tableset]_newstozone`
 						WHERE `zoneid` = ".$FSXL[zone][id]." AND `date` <= '$FSXL[time]'
 						GROUP BY `newsid` ORDER BY `date` DESC LIMIT ".$FSXL[config][news_perpage]);
 $query = "SELECT * FROM `$FSXL[tableset]_news` WHERE ";
-while ($connect = mysql_fetch_assoc($index)) {
-	$query .= "`id` = '$connect[newsid]' OR ";
-}
-$query = substr($query, 0, -3) . ' ORDER BY `datum` DESC';
+if (mysql_num_rows($index) > 0) {
+	while ($connect = mysql_fetch_assoc($index)) {
+		$query .= "`id` = '$connect[newsid]' OR ";
+	}
+	$query = substr($query, 0, -3) . ' ORDER BY `datum` DESC';
 
-// Daten lesen
-$index = @mysql_query($query);
+	// Daten lesen
+	$index = @mysql_query($query);
+}
 
 // News vorhanden
 if (mysql_num_rows($index) > 0)

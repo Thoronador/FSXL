@@ -57,6 +57,8 @@ $FS_PHRASES[gallery_add_zone_sub] = 'Зона в которой эта гале�
 $FS_PHRASES[gallery_add_nozone] = 'Без зоны';
 $FS_PHRASES[gallery_add_age] = 'Возрастной рейтинг';
 $FS_PHRASES[gallery_add_years] = 'лет';
+$FS_PHRASES[gallery_add_hidden] = 'Скрыто';
+$FS_PHRASES[gallery_add_hidden_sub] = 'Без листинга, без кнопок';
 
 
 // Bilder

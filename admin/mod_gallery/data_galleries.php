@@ -48,6 +48,7 @@ if ($_POST[action] == 'editgallery' && $_POST[name] && $_POST[cols] && $_POST[da
 		settype($_POST[zone], 'integer');
 		settype($_POST[age], 'integer');
 		$regonly = $_POST[regonly] ? 1 : 0;
+		$hidden = $_POST[hidden] ? 1 : 0;
 
 		mysql_query("UPDATE `$FSXL[tableset]_galleries` SET `name` = '$_POST[name]', 
 									`text` = '$_POST[text]', 
@@ -58,7 +59,8 @@ if ($_POST[action] == 'editgallery' && $_POST[name] && $_POST[cols] && $_POST[da
 									`cat` = '$_POST[cat]',
 									`zoneid` = '$_POST[zone]',
 									`regonly` = '$regonly',
-									`age` = '$_POST[age]'
+									`age` = '$_POST[age]',
+									`hidden` = '$hidden'
 									WHERE `id` = '$_POST[id]'");
 
 		$FSXL[content] = '
@@ -205,6 +207,13 @@ elseif ($_GET[edit])
 						<td><input type="checkbox" name="regonly" '.($gallery[regonly] ? "checked" : "").'></td>
 					</tr>
 					<tr>
+						<td>
+							<b>'.$FS_PHRASES[gallery_add_hidden].':</b><br>
+							'.$FS_PHRASES[gallery_add_hidden_sub].'
+						</td>
+						<td><input type="checkbox" name="hidden" '.($gallery[hidden] ? "checked" : "").'></td>
+					</tr>
+					<tr>
 						<td><b>'.$FS_PHRASES[gallery_add_age].':</b></td>
 						<td>
 							<input name="age" class="textinput" style="width:20px;" value="'.$gallery[age].'">
@@ -246,9 +255,10 @@ elseif ($_POST[action] == 'newgallery' && $_POST[name] && $_POST[thumbx] && $_PO
 	settype($_POST[zone], 'integer');
 	settype($_POST[age], 'integer');
 	$regonly = $_POST[regonly] ? 1 : 0;
+	$hidden = $_POST[hidden] ? 1 : 0;
 
-	$index = mysql_query("INSERT INTO `$FSXL[tableset]_galleries` (`id`, `name`, `text`, `datum`, `thumbx`, `thumby`, `color`, `cols`, `type`, `cat`, `zoneid`, `regonly`, `pics`, `age`)
-				VALUES (NULL, '$_POST[name]', '$_POST[text]', $date, $_POST[thumbx], $_POST[thumby], '$_POST[color]', $_POST[cols], $_POST[type], $_POST[cat], $_POST[zone], $regonly, 0, '$_POST[age]')");
+	$index = mysql_query("INSERT INTO `$FSXL[tableset]_galleries` (`id`, `name`, `text`, `datum`, `thumbx`, `thumby`, `color`, `cols`, `type`, `cat`, `zoneid`, `regonly`, `pics`, `age`, `hidden`)
+				VALUES (NULL, '$_POST[name]', '$_POST[text]', $date, $_POST[thumbx], $_POST[thumby], '$_POST[color]', $_POST[cols], $_POST[type], $_POST[cat], $_POST[zone], '$regonly', 0, '$_POST[age]', '$hidden')");
 	
 	// Ordner anlegen
 	$id = mysql_insert_id();
@@ -399,6 +409,13 @@ else
 					<tr>
 						<td><b>'.$FS_PHRASES[gallery_galleries_regonly].':</b></td>
 						<td><input type="checkbox" name="regonly"></td>
+					</tr>
+					<tr>
+						<td>
+							<b>'.$FS_PHRASES[gallery_add_hidden].':</b><br>
+							'.$FS_PHRASES[gallery_add_hidden_sub].'
+						</td>
+						<td><input type="checkbox" name="hidden"></td>
 					</tr>
 					<tr>
 						<td><b>'.$FS_PHRASES[gallery_add_age].':</b></td>

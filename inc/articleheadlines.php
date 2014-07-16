@@ -5,9 +5,16 @@ $article_tpl = new template('articleheadlines');
 $article_tpl->getItem('article');
 
 // Daten einlesen
-if (!$_SESSION[loggedin] && $FSXL[config][showregonly] != 1)
-{
-	$sqladd = 'AND `regonly` = 0';
+$sqladd = '';
+if (!$_SESSION[loggedin] && $FSXL[config][showregonly] != 1) {
+	$sqladd = 'AND `regonly` = 0 ';
+}
+if ($_SESSION[zone] == $FSXL[config][defaultzone]) {
+	$issubzone = false;
+	$sqladd .= 'AND `zoneid` IN ('.implode(",", $FSXL[currentzones]).')';
+} else {
+	$issubzone = true;
+	$sqladd .= "AND `zoneid` = '$_SESSION[zone]' ";
 }
 $index = mysql_query("SELECT `id`, `titel`, `zoneid`, `datum` FROM `$FSXL[tableset]_article` WHERE `datum` <= '$FSXL[time]' $sqladd AND `invisible` = 0 ORDER BY `datum` DESC LIMIT ".$FSXL[config][article_headlines]);
 
@@ -15,7 +22,7 @@ $index = mysql_query("SELECT `id`, `titel`, `zoneid`, `datum` FROM `$FSXL[tables
 while ($headline = mysql_fetch_assoc($index))
 {
 	$article_tpl->newItemNode('article');
-	if ($headline[zoneid] > 0) {
+	if ($headline[zoneid] > 0 && $issubzone == false) {
 		$url = $FSXL[zones][$headline[zoneid]][url] . '/';
 	} else {
 		$url = '';

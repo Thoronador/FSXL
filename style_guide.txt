@@ -1,0 +1,4 @@
+Template -> Galerie Detailansicht
+-----------------------------------
+Neue Bedingung: <-- if not_hidden -->
+Wird ausgeblendet, wenn die Galerie versteckt ist. zB um Buttons und Bildnummer zu verbergen.

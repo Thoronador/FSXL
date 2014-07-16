@@ -135,6 +135,7 @@ $FS_PHRASES[main_config_countersavetime] = 'Save time';
 $FS_PHRASES[main_config_countersavetime_sub] = 'Months to store the user data';
 $FS_PHRASES[main_config_agerating] = 'Age stages';
 $FS_PHRASES[main_config_agerating_sub] = '(Age>Time) Several stages are separated by commas.';
+$FS_PHRASES[main_config_siteurl] = 'Website URL';
 
 // Rewrite Map
 $FS_PHRASES[main_rewrite_title] = 'REWRITE MAP';
@@ -275,6 +276,10 @@ $FS_PHRASES[main_zone_link] = 'Link';
 $FS_PHRASES[main_zone_addfailed] = 'Cannot create zone. Maybe the suffix already exists.';
 $FS_PHRASES[main_zone_edited] = 'Zone edited.';
 $FS_PHRASES[main_zone_editfailed] = 'Failed to edit zone.';
+$FS_PHRASES[main_zone_single] = 'Single zone';
+$FS_PHRASES[main_zone_single_sub] = 'Headlines of this zone are not displayed in the home section';
+$FS_PHRASES[main_zone_headlines] = 'Show headlines';
+$FS_PHRASES[main_zone_headlines_sub] = 'Shows headlines in home section of this zone';
 
 
 // User

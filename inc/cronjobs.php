@@ -26,8 +26,7 @@ if ($FSXL[config][crontime] <= $FSXL[time]-600)
 						$forumid = $cat[forumid] > 0 ? $cat[forumid] : $FSXL[config][vb_forum];
 						$vbtext = vBText($news[text]);
 						$vbtitle = $FSXL[config][vb_prefix] . ' ' . $news[titel];
-						$script = preg_replace("/(.*?)\/(admin){0,1}(\/){0,1}(index\.php){0,1}/i", "$1", $_SERVER[SCRIPT_NAME]);
-						$url = 'http://'.$_SERVER[SERVER_NAME].'/'.$script.'?section=newsdetail&id='.$news[id];
+						$url = $FSXL[config][siteurl] . '/?section=newsdetail&id='.$news[id];
 						$vbtext .= "\r\n\r\n[url=$url]$FS_PHRASES[news_add_vb_homepage][/url]";
 						
 						$vb = new vbConnect($FSXL[config][vb_url], $FSXL[config][vb_user], $FSXL[config][vb_password]);

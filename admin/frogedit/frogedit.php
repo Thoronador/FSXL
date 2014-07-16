@@ -114,7 +114,7 @@ $frogedit_code = '
 			<div unselectable="on" class="fp_button" id="btlink"><img border="0" src="frogpad/images/link.gif" alt="Link hinzuf&uuml;gen" onClick="fe_openLinkBar();"></div>
 			<div unselectable="on" class="fp_button" id="btimage"><img border="0" src="frogpad/images/image.gif" alt="Bild einf&uuml;gen" onClick="fe_openImgBar();"></div>
 			<div unselectable="on" class="fp_trenner"></div>
-			<div unselectable="on" class="fp_button" id="btol"><img border="0" src="frogpad/images/ol.gif" onclick="insertText(\'[list=number]\n[*]\', \'\n[/list]\')" alt="Nummerische Liste"></div>
+			<div unselectable="on" class="fp_button" id="btol"><img border="0" src="frogpad/images/ol.gif" onclick="insertText(\'[numlist]\n[*]\', \'\n[/numlist]\')" alt="Nummerische Liste"></div>
 			<div unselectable="on" class="fp_button" id="btul"><img border="0" src="frogpad/images/ul.gif" onclick="insertText(\'[list]\n[*]\', \'\n[/list]\')" alt="Stickpunkte"></div>
 			<div unselectable="on" class="fp_trenner"></div>
 			<div unselectable="on" class="fp_button" id="btindent"><img border="0" src="frogpad/images/indent.gif" onClick="insertFSCode(\'dir\')" alt="Text einr&uuml;cken"></div>

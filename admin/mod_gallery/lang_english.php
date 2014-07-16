@@ -57,6 +57,8 @@ $FS_PHRASES[gallery_add_zone_sub] = 'Zone in which this gallery is shown';
 $FS_PHRASES[gallery_add_nozone] = 'No zone';
 $FS_PHRASES[gallery_add_age] = 'Age rating';
 $FS_PHRASES[gallery_add_years] = 'years';
+$FS_PHRASES[gallery_add_hidden] = 'Hidden';
+$FS_PHRASES[gallery_add_hidden_sub] = 'No listing, no buttons';
 
 
 // Bilder

@@ -46,7 +46,11 @@ else
 	// Zonen
 	$index = mysql_query("SELECT * FROM `$FSXL[tableset]_zones`");
 	while ($zdata = mysql_fetch_assoc($index)) {
-		$FSXL[zones][$zdata[id]] = array('id' => $zdata[id], 'name' => $zdata[name], 'style' => $zdata[style], 'url' => $zdata[url], 'page' => $zdata[page]);
+		$FSXL[zones][$zdata[id]] = array('id' => $zdata[id], 'name' => $zdata[name], 'style' => $zdata[style], 'url' => $zdata[url], 'page' => $zdata[page], 'single' => $zdata[single], 'headlines' => $zdata[headlines]);
+		// Alle Zonen die hier angezeigt werden dürfen
+		if ($zdata[single] == 0) {
+			$FSXL[currentzones][] = $zdata[id];
+		}
 	}
 	if ($_GET[zone]) {
 		settype($_GET[zone], 'integer');
@@ -64,6 +68,8 @@ else
 			$FSXL[zone] = $FSXL[zones][$FSXL[config][defaultzone]];
 		}
 	}
+	$FSXL[currentzones][] = $FSXL[zone][id];
+	$FSXL[currentzones][] = 0;
 
 	// Styles
 	// Vom Benutzer wählbarer Style

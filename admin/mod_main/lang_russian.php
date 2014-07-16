@@ -134,6 +134,7 @@ $FS_PHRASES[main_config_countersavetime] = 'Сохранить время';
 $FS_PHRASES[main_config_countersavetime_sub] = 'Количество месяцев, в течение которых, будет сохраняться информация о пользователях';
 $FS_PHRASES[main_config_agerating] = 'Возрастные категории';
 $FS_PHRASES[main_config_agerating_sub] = '(Возраст>Время) Несколько категорий разделены запятыми.';
+$FS_PHRASES[main_config_siteurl] = 'Адрес сайта';
 
 // Rewrite Map
 $FS_PHRASES[main_rewrite_title] = 'ПЕРЕПИСАТЬ КАРТУ';
@@ -272,6 +273,11 @@ $FS_PHRASES[main_zone_link] = 'Ссылка';
 $FS_PHRASES[main_zone_addfailed] = 'Немогу создать зону, возможно такой суффикс уже существует.';
 $FS_PHRASES[main_zone_edited] = 'Зона отредактирована.';
 $FS_PHRASES[main_zone_editfailed] = 'Ошибка при редактировании зоны.';
+$FS_PHRASES[main_zone_single] = 'Единичная зона';
+$FS_PHRASES[main_zone_single_sub] = 'Заголовки из этой зоны, не отображаются в главной секции';
+$FS_PHRASES[main_zone_headlines] = 'Показывать заголовки';
+$FS_PHRASES[main_zone_headlines_sub] = 'Показывать заголовки в главной секции этой зоны';
+
 
 // User
 

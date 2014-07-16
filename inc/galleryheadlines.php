@@ -5,17 +5,24 @@ $gallery_tpl = new template('galleryheadlines');
 $gallery_tpl->getItem('gallery');
 
 // Daten einlesen
-if (!$_SESSION[loggedin] && $FSXL[config][showregonly] != 1)
-{
+$sqladd = '';
+if (!$_SESSION[loggedin] && $FSXL[config][showregonly] != 1) {
 	$sqladd = 'AND `regonly` = 0';
 }
-$index = mysql_query("SELECT `id`, `name`, `datum`, `zoneid` FROM `$FSXL[tableset]_galleries` WHERE `datum` <= '$FSXL[time]' $sqladd ORDER BY `datum` DESC LIMIT ".$FSXL[config][gallery_headlines]);
+if ($_SESSION[zone] == $FSXL[config][defaultzone]) {
+	$issubzone = false;
+	$sqladd .= 'AND `zoneid` IN ('.implode(",", $FSXL[currentzones]).',0)';
+} else {
+	$issubzone = true;
+	$sqladd .= "AND `zoneid` IN ($_SESSION[zone],0) ";
+}
+$index = mysql_query("SELECT `id`, `name`, `datum`, `zoneid` FROM `$FSXL[tableset]_galleries` WHERE `datum` <= '$FSXL[time]' AND `hidden` = 0 $sqladd ORDER BY `datum` DESC LIMIT ".$FSXL[config][gallery_headlines]);
 
 // Template füllen
 while ($headline = mysql_fetch_assoc($index))
 {
 	$gallery_tpl->newItemNode('gallery');
-	if ($headline[zoneid] > 0) {
+	if ($headline[zoneid] > 0 && $issubzone == false) {
 		$url = $FSXL[zones][$headline[zoneid]][url] . '/';
 	} else {
 		$url = '';

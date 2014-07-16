@@ -1,0 +1,2 @@
+<b>Der Vorgang konnte nicht durchgeführt werden, da verdacht auf einen Spambot besteht.<br>Sollte dies nicht der Fall sein, so versuche es bitte noch einmal.</b><p>
+<input type="button" class="button" value="Zurück" onClick="javascript:history.back();">

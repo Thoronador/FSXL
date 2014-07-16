@@ -1,0 +1,60 @@
+RewriteEngine on
+Options +FollowSymLinks
+
+RewriteRule ^([^/\.\?&]){1,}$ %{REQUEST_URI}/ [R]
+
+RewriteRule logout\.php logout.php?zone=1&%{QUERY_STRING}
+RewriteRule rss2\.xml_([0-9]*)\.php rss2.xml.php?zone=$1
+
+# Article
+RewriteRule ^([a-z0-9]*/){0,1}article_cat([0-9]*)\.htm$ $1index.php&section=article&cat=$2
+RewriteRule ^([a-z0-9]*/){0,1}article_([0-9]*)_([0-9]*)\.htm$ $1index.php&section=article&id=$2&page=$3
+RewriteRule ^([a-z0-9]*/){0,1}article_([0-9]*)\.htm$ $1index.php&section=article&id=$2
+
+# News
+RewriteRule ^([a-z0-9]*/){0,1}news_([0-9]*)\.htm$ $1index.php&section=newsdetail&id=$2
+RewriteRule ^([a-z0-9]*/){0,1}newsarchiv_([0-9]*)_([0-9]*)\.htm$ $1index.php&section=newsarchiv&month=$2&year=$3&mr=true
+RewriteRule ^([a-z0-9]*/){0,1}newsarchiv_([0-9]*)_([0-9]*)_([0-9]*)\.htm$ $1index.php&section=newsarchiv&month=$2&year=$3&page=$4&mr=true
+
+# Galerien
+RewriteRule ^([a-z0-9]*/){0,1}gallery_cat([0-9]*)\.htm$ $1index.php&section=gallery&cat=$2
+RewriteRule ^([a-z0-9]*/){0,1}gallery_([0-9]*)\.htm$ $1index.php&section=gallery&id=$2
+RewriteRule ^([a-z0-9]*/){0,1}gallery_pic([0-9]*)\.htm$ $1index.php&section=gallery&detail=$2
+RewriteRule ^([a-z0-9]*/){0,1}timed_pic([0-9]*)\.htm$ $1index.php&section=timed&detail=$2
+
+# Contests
+RewriteRule ^([a-z0-9]*/){0,1}contest_([0-9]*)\.htm$ $1index.php&section=contest&id=$2
+RewriteRule ^([a-z0-9]*/){0,1}contestentries_([0-9]*)_([0-9]*)\.htm$ $1index.php&section=contestentries&id=$2&page=$3
+RewriteRule ^([a-z0-9]*/){0,1}contestentries_([0-9]*)\.htm$ $1index.php&section=contestentries&id=$2
+RewriteRule ^([a-z0-9]*/){0,1}contestentry_([0-9]*)\.htm$ $1index.php&section=contestentry&id=$2
+
+# Downloads
+RewriteRule ^([a-z0-9]*/){0,1}download_folder([0-9]*)\.htm$ $1index.php&section=download&folder=$2
+RewriteRule ^([a-z0-9]*/){0,1}download_([0-9]*)\.htm$ $1index.php&section=download&id=$2
+
+# Umfragen
+RewriteRule ^([a-z0-9]*/){0,1}pollarchiv_([0-9]*)\.htm$ $1index.php&section=pollarchiv&id=$2
+
+# Shop LT
+RewriteRule ^([a-z0-9]*/){0,1}shoplt_cat([0-9]*)\.htm$ $1index.php&section=shoplt&cat=$2
+
+# Ticker
+RewriteRule ^([a-z0-9]*/){0,1}ticker_([0-9]*)\.htm$ $1index.php&section=ticker&id=$2
+
+# Videos
+RewriteRule ^([a-z0-9]*/){0,1}video_cat([0-9]*)\.htm$ $1index.php&section=video&cat=$2
+RewriteRule ^([a-z0-9]*/){0,1}video_([0-9]*)\.htm$ $1index.php&section=video&id=$2
+RewriteRule ^([^/]*/)inc/frogplayer\.swf(.*) inc/frogplayer.swf$2
+
+# Links
+RewriteRule ^([a-z0-9]*/){0,1}links_cat([0-9]*)_([0-9]*)\.htm$ $1index.php&section=links&cat=$2&sub=$3
+RewriteRule ^([a-z0-9]*/){0,1}links_cat([0-9]*)\.htm$ $1index.php&section=links&cat=$2
+
+# Shortcuts
+RewriteRule ^([a-z0-9]*/){0,1}([a-zA-Z0-9\-\_]*)\.htm$ $1index.php&go=$2
+
+
+RewriteCond %{REQUEST_FILENAME} (index\.php)
+RewriteRule ^(index\.php){0,1}([^/\?]*)$ index.php?zone=1&$2&%{QUERY_STRING}
+# <-- zones -->
+# <-- /zones -->

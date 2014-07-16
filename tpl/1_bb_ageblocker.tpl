@@ -1,0 +1,1 @@
+<div style="text-align:center; padding:20px; border:1px dashed #017801;">Dieser Inhalt wird erst ab {time} Uhr verfügbar sein.</div>

@@ -1,0 +1,37 @@
+body
+{
+	background-color:#FFFFFF;
+	font-family:Arial;
+	font-size:10pt;
+	border:0px;
+}
+hr
+{
+	height:1px;
+	border-top:1px solid #000000;
+}
+td
+{
+	font-size:10pt;
+	vertical-align:top;
+}
+
+.bbfs
+{
+	border-left:1px solid #000000;
+	border-top:1px solid #000000;
+}
+.bbfstd_head
+{
+	border-right:1px solid #000000;
+	border-bottom:1px solid #000000;
+	background-color:#00FF00;
+	padding:2px;
+}
+.bbfstd_normal
+{
+	border-right:1px solid #000000;
+	border-bottom:1px solid #000000;
+	background-color:#88FF88;
+	padding:2px;
+}

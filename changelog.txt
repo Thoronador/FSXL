@@ -1,0 +1,445 @@
+************************************************
+**                                            **
+**                Changelog                   **
+**                                            **
+************************************************
+
+***************** 05.09.10 *********************
+
+- Es wurde ein neues System zur Altersbeschränkung von Inhalten
+  eingefügt. Die Stufen können in der Konfiguration eingestellt werden.
+- Video können jetzt eine Altersfreigabe erhalten.
+- Galerien können jetzt eine Altersfreigabe erhalten.
+- Downloads können jetzt eine Altersfreigabe erhalten.
+- Es steht nun ein neuer FS-Code Tag zur verfügung, mit dem man
+  Inhalte nach Alter filtern kann:
+  [age=XX]Text[/age]
+  XX gibt das Alter an. Ist die Uhrzeit nicht erreicht, wird der "Text"
+  durch das Template "FS-Code: Altersfreigabe" ersetzt.
+  Bei Feeds und vB News wird der "Text" immer entfernt.
+- Im Shopmodul kann jetzt beim Text und der Kategoriebeschreibung
+  FS-Code benutzt werden
+- Downloads werden jetzt im Admin und im Frontend alphabetisch geordnet.
+- Bei Artikel mit mehreren Seiten kann man im Adminbereich jetzt zwischen
+  den Seiten wechseln.
+
+***************** 05.04.10 *********************
+
+- Bei Wettbewerbseinsendungen wird im Admin jetzt auch das 
+  Einsendungsdatum angezeigt.
+- Bugfix: Vordatierte News werden nun auch nach einer Änderung vor
+  ihrer Veröffentlichung zum neu Eingetragenen Termin mit dem vB
+  Plugin korrekt gepostet.
+
+***************** 02.04.10 *********************
+
+- Die Hintergrundfarbe von Galeriethumbnails kann nun nachträglich
+  geändert werden. Außerdem gibt es jetzt eine Farbvorschau.
+- Die Jobübersicht ist jetzt in Seiten eingeteilt.
+- Jobs können jetzt aus dem Adminbereich heraus beantwortet werden,
+  sofern in der Jobbeschreibung eine E-Mail Adresse enthalten ist.
+  Dazu einfach in der Jobübersicht auf den Namen des Jobs klicken.
+- Bugfix: Bei News und Artikeln werden Anführungszeichem im Titel im
+  Adminbereich nun korrekt angezeigt.
+- Bei Downloads kann jetzt eine URL für den Autor hinterlegt werden.
+- Bei Downloads kann im Template jetzt eine Variable eingesetzt werden,
+  die die totale Downloadzahl anzeigt.
+
+***************** 29.08.09 *********************
+
+- News können nun nicht mehr doppelt eingesendet werden. Wird
+  der gleiche Newstext zweimal eingesendet, erhält der User eine
+  Benachrichtigung.
+- Download können jetzt deaktiviert werden. Daurch werden sie für
+  User unsichtbar. Admins können sie weiterhin aufrufen.
+
+***************** 23.08.09 *********************
+
+- Bugfix: Templatevars werden jetzt korrect gecached.
+- Bugfix: News und Artikel können jetzt wieder korrekt als
+  HTML verfasst werden.
+
+***************** 16.08.09 *********************
+
+- Man kann beim erstellen und editieren einer Umfrage nun angeben
+  in welchen Zonen sie auftauchen soll. Damit ist es nun Möglich
+  verschiedene Umfragen für jede Zone zu erstellen.
+- Diverse Bugfixes
+- In der Shop Konfiguration kann jetzt eingestellt werden, in welcher
+  Reihenfolge Artikel angezeigt werden.
+
+***************** 08.08.09 *********************
+
+- Sprachpakete für Englisch und Russisch wurden hinzugefügt.
+- Man kann nun für jede Zone eine eigene RSS Datei abrufen.
+  z.B. rss2.xml_12.php für die Zone mit der ID 12.
+- Beim erstellen und editieren von News wird nun nicht mehr nur
+  nach der UserID der Autor eingetragen sondern, zuerst nach dem
+  Namen. Wenn dieser nicht gefunden wurde, wird die Userid
+  benutzt.
+- Newskategorien kann jetzt ein Präfix im Namen vorrangestellt werden.
+  Dadurch werden Kategorien mit gleichem Präfix in der Übersicht
+  zusammengefasst. Das Präfix ist auf der Ausgabeseite unsichtbar.
+  Beispiel: "de_Allgemein" ergibt späer nur "Allgemein"
+
+***************** 04.08.09 *********************
+
+- News können nun kopiert werden. Dazu befindet sich in der
+  Detailansicht einer news im Adminbereich hinter dem Tiel 
+  ein neues Icon.
+
+***************** 01.08.09 *********************
+
+- Diverse kleine Bugfixes
+- Man kann nun im Adminbereich in seinem Profil wählen, welche
+  Systemsprache man benutzen will.
+- Kosmetische Updates im Adminbereich
+
+***************** 25.07.09 *********************
+
+- Das Newsarchiv wurde jetzt in Seiten aufgeteilt. Alle X
+  Einträge wird nun eine neue Seite angelegt. X ist gleich
+  der Anzahl der "News pro Seite" im Adminbereich.
+- Emails, die verschickt werden, wenn jemand eine News 
+  einsendet, enthalten jetzt den Namen des Einsenders.
+- Das Kontaktformular wurde um einen Spamblocker erweitert.
+- Dem Gallery-Tag kann nun ein weiteres Parameter übergeben
+  werden, dass die Startnummer der Bilder angibt:
+    [gallery=X,Y]Z[/gallery]
+    X = Anzahl der angezeigten Bilder
+    Y = Startwert der Bilder (gleich der Position im Admin)
+    Z = ID der Galerie
+- Bilder können nun mit einem Datum versehen werden, wenn sie
+  in eine Galerie eingefügt werden. Bilder erscheinen dann erst
+  zu diesem Datum.
+- Links, die in Userkommentaren geschrieben werden enthatlten nun
+  das Attribut rel="nofollow".
+- Es wurde ein neues FS-Code Tag hinzugefügt: [pre]Text[/pre]
+  Dieses verhält sich analog zu dem HTML Tag <pre> und kann dazu
+  genutzt werden Tabulatoren im Text darzustellen.
+
+***************** 30.05.09 *********************
+
+- Bei Wettbewerben wird die Übersicht jetzt in Unterseiten
+  unterteilt, wenn zu viele Einträge vorhanden sind.
+
+***************** 08.05.09 *********************
+
+- Link Kategorien kann jetzt ein Tag zugewiesen werden. Dieser
+  Tag wird dann hinter dem Link in den Headlines dargestellt.
+- Links können jetzt zusätzlich in Unterkategorien eingeteilt
+  werden.
+
+***************** 03.05.09 *********************
+
+- In der Statistik kann man nun bei den Galerien für jedes
+  einzelne Bild einen Zähler abrufen.
+- Es wurde eine Rewrite Map hinzugefügt, mit der man selber
+  URLs umleiten kann, auf andere Sektionen.
+
+***************** 01.05.09 *********************
+
+- Das Newssystem wurde ein wenig modifiziert. Man kann jeder
+  News jetzt noch zusätzlich eine Zone zuweisen, in der sie
+  neben den normalen Kategorien ebenfalls angezeigt werden
+  soll.
+- Bei Artikeln kann jetzt eine Zone angegeben werden. Dadurch
+  wird der Artikel in dieser Zone geöffnet, wenn man ihn über
+  die Headlines aufruft.
+- Gleiches gilt für Galerien.
+
+***************** 27.04.09 *********************
+
+- Bugfix: Im Adminbereich werden jetzt Artikel mit korrekter
+  Seitenzahl angezeigt.
+- Bugfix: Artikelunterseiten werden jetzt korrekt gespeichert.
+
+***************** 18.04.09 *********************
+
+- Bei Kontaktanfragen wird jetzt der Betreff mit in
+  den Jobtitel geschrieben.
+- Bei eingesendeten News wird nun der Text mit der Mail
+  an den Staff versendet.
+
+***************** 11.04.09 *********************
+
+- Bugfix: Session IDs werden bei Kontaktanfragen nicht mehr
+  mit verschickt.
+- Bugfix: Bei absteigend sortierten Galerien werden jetzt
+  auch die einzelnen Bilder in umgekehrter Reihenfolge
+  wiedergegeben.
+
+***************** 08.04.09 *********************
+
+- Man kann jetzt für jede Newskategorie individuell einstellen
+  in welchem Forum sie gepostet werden soll.
+- Jeder Zone kann jetzt eine individuelle Startseite zugeordnet
+  werden.
+
+***************** 05.04.09 *********************
+
+- In Newskommentaren wird jetzt nur noch ein eingeschränkter
+  FS Code verwendet.
+- Bugfix: Beim Überschreiben von Templates wird jetzt der APC
+  Cache geleert.
+
+***************** 04.04.09 *********************
+
+- Bugfix: URL bei im Forum gepoteten News wurde
+  repariert.
+- Bugfix: FS Tags werden jetzt besser zu vB Tags konvertiert.
+- Poll Tag hinzugefügt, mit dem in Texten Ergebnisse von
+  Umfragen angezeigt werden können.
+- Videos können jetzt in Kategorien einsortiert werden.
+- In der Konfiguration kann jetztz eingestelt werden, wie
+  lange Userdaten in der Statistk gespeichert werden.
+- Bugfix: Diverse htaccess einträge wurden verbessert
+
+***************** 22.03.09 *********************
+
+- Die Zonenverwaltung wurde erweitert. Man muss Zonen
+  jetzt Suffixe geben, die dann als Erweiterung in der
+  URL genutzt werden. Eine Zone mit dem Suffix "green"
+  wird dann als www.domain.de/green/ behandelt.
+- Konfig Option eingefügt, um News die im Forum gepostet werden
+  ein Präfix voran zu stellen. 
+
+***************** 21.03.09 *********************
+
+- Die bisherige Funktion zum erzeugen von Bildern
+  wurde durch eine Klasse ersetzt, die ein wenig
+  Leistungsstärker ist.
+
+
+***************** 20.03.09 *********************
+
+- Konfigeinstellung eingefügt, damit beim erstellen von News
+  jetzt die Option Kommentare schreiben zu können
+  vorselektiert ist oder nicht.
+- Konfigeinstellung eingefügt, die Kontaktanfragen
+  in Jobs umwandeln kann.
+- Bug gefixt, der das versenden von Email bei mehreren
+  Emfängern verhindert hat.
+
+***************** 18.03.09 *********************
+
+- Dem News Modul wurde ein vB Plugin hinzugefügt.
+  Damit kann man News nun auch parallel in einem
+  vBulletin Forum posten.
+- Dazu finden sich neue Felder im News Konfigurations
+  Bereich, die nur für Superadmins sichtbar sind, in
+  die die Forendaten eingetragen werden.
+- Das vB Plugin unterstützt erstellen, öffnen, schließen,
+  editieren und löschen von Threads. Dies geschiet
+  jeweils analog zur Funktion, die beim bearbeiten einer
+  News ausgeführt wird.
+
+***************** 14.03.09 *********************
+
+- Einige Module wurden grafisch und funktional im
+  Adminbereich geupdatet.
+- Option eingebunden, um bei Artikeln und Galerien
+  die Übersicht abzuschalten, wenn weder Artikel noch
+  Kategorie angegeben wurden.
+- Man kann sich nun ein neues Passwort zusenden lassen,
+  wenn man sein altes vergessen hat.
+
+***************** 14.03.09 *********************
+
+- Das Ticker Modul wurde erweitert und grafisch
+  überarbeitet.
+- Es können nun Ticker mit RSS Feeds gespeist werden,
+  die sich dann selber updaten
+- Auf der Hauptseite kann in der Tickerbox jetzt der
+  neuste Eintrag angezeigt werden.
+- Es können jetzt auf der Hauptseite auch Link Headlines
+  angezeigt werden.
+- Es können jetzt eigene FS Codes definiert werden.
+
+***************** 08.03.09 *********************
+
+- Bei eingesendeten News und erstellten Jobs, werden
+  jetzt Emails an alle verschickt, die im Amdinbereich
+  die entsprechenden Rechte zur Verarbeitung haben.
+  Das versenden dieser Mails kann in der Konfiguration
+  auch deaktiviert werden.
+
+***************** 07.03.09 *********************
+
+- Link Modul wurde überarbeitet. Grafisches Update
+  im Adminbereich und im Template.
+- Links müssen nicht mehr zwangsweise eine URL haben.
+- Bei allen Templates, die Listen ausgeben wurde eine
+  neue Variable {altnum} hinzugefügt, die bei jedem
+  Eintrag zwischen 1 und 2 hin und her wechselt.
+- News können jetzt von Usern eingesendet werden.
+  Eingesendete News erscheinen dann auf der Admin
+  Home Seite, oder in der Newsrubrik. Diese Einsendungen
+  können dann in eine echte News umgewandelt werden.
+
+***************** 02.03.09 *********************
+
+- Video Flash Player wurde geupdatet. 
+  Neue Features:
+    - MP4, M4A, MOV, MP4V, 3GP, 3G2, FLV, FL4 
+      unterstützung.
+    - Player lädt Video erst, wenn Play Button gedrückt
+      wird.
+    - Context Menü Eintrag, um Video herunter zu
+      laden.
+    - Kleines Grafik Update
+
+***************** 28.02.09 *********************
+
+- Bugfix: Templates werden wieder korrekt gecached.
+- Video Tag hinzugefügt, um Video in News und Artikeln
+  einzubauen.
+- Bei Galerien und Videos im Adminbereich FS-Code und 
+  Link spalte in der Übersicht hinzugefügt.
+- Job verwaltung im Adminbereich hinzugefügt, um Jobs
+  unter den Seitenmitarbeiten zu verteilen.
+
+***************** 22.02.09 *********************
+
+- Wettbewerbs Script eingebaut, mit dem man Text-
+  und Bildwettbewerbe erstellen kann. Auswertung kann
+  über Abstimmung, Auslosung oder eine Jury erfolgen.
+
+***************** 13.02.09 *********************
+
+- Galeriebilder werden nun nicht mehr alle im selben
+  Ordner abgelegt, sondern jede Galerie hat ihren eigenen
+  Ordner.
+
+***************** 13.02.09 *********************
+
+- Ab sofort kann man unter Galerie zeitgesteuerte
+  Bilder einstellen, die nur in einem besteimmten Zeitraum
+  sichtbar sind. Diese Bilder werden unter PotM eingebunden.
+
+***************** 11.02.09 *********************
+
+- Artikel können nun mehrere Seiten haben.
+
+***************** 07.02.09 *********************
+
+- FS Code hinzugefügt, um Galerien in Beiträgen zu verlinken.
+  [gallery=X]Y[/gallery]
+  X = Nazhal der Vorschaubilder (Ohne Angabe 3)
+  Y = ID Der Galerie
+
+***************** 10.01.09 *********************
+
+- Template Variablen Option hinzugefügt, um Variablen
+  auf einzelne Unterseiten zu beschränken
+
+***************** 09.01.09 *********************
+
+- Automatische Erkennung und Nutzung von APC Cache integriert
+- Template Variable hinzugefügt, die Zonengebunden ist
+
+***************** 14.09.08 *********************
+
+- Konfigurationspunkte unter "Sicherheit" werden nun
+  rot hinterlegt, wenn sie als unsicher eingestuft werden
+
+***************** 13.09.08 *********************
+
+- Option hinzugefügt, die erlaubt im Adminbereich per Cookie
+  eingelogt zu werden. Einstellbar in der Konfiguration
+- Back to Basic: Da das Frogpad bisher noch auf zu Große
+  Probleme stößt ist es nicht mehr der Standardeditor, sondern
+  nur noch als eigene Auswahl im Profil einstellbar.
+  Der neue Stadardeditor ist Frogedit. Eine schlankere Javascript
+  Version, die aber auch die meisten Features unterstützt.
+- Login System überarbeitet
+  Es ist nun einstellbar, wie oft man ein falsches
+  Passwort eingeben kann, ehe man für eine einstellbare
+  Zeit gesperrt wird.
+
+***************** 09.09.08 *********************
+
+- Newsstream für Superadmins auf der Startseite hinzugefügt
+  Dieser Informiert über Updates und Erweiterungen die
+  das System betreffen.
+
+***************** 08.09.08 *********************
+
+- Such-Wolke hinzugefügt. Hier werden die letzen
+  Suchbegriffe je nach Häufigkeit der anfrage in
+  verschiedenen Größen dargestellt.
+
+***************** 03.09.08 *********************
+
+- Bugfix: Unsichtbare Artikel tauchen nicht mehr
+  in den Headlines auf.
+- Template Variablen können jetzt gecached werden
+  Eine Option dazu befindet sich im Konfig Bereich.
+- Ein weiterer Variablen Typwurde hinzugefügt.
+  Neben single und multi Variablen kann man nun auch
+  includes benutzen. Dabei wird eine Datei per Include
+  eingebunden. Alle Scriptausgaben dieser Datei werden
+  gespeichert und ersetzen die Variable.
+
+***************** 02.09.08 *********************
+
+- Beim Erstellen neuer Bilder im Bildmanager kann man
+  jetzt optional eine Größe angeben, in die das Bild
+  skaliert werden soll. Transparenz von gif und png
+  geht beim Skalieren verlohren.
+- Der Imagemanager wurde einem Update unterzogen.
+  Klickt man nun auf ein Bild im Manager erhältman
+  zusätzliche Informationen zu diesem (Name, Auflösung,
+  Größe, Dateiname, Erstellungsdatum, Letzte Änderung, 
+  Uploader)
+  Zusätzlich kann man jetzt Bilder mit einem neuen Bild
+  ersetzen.
+- Infotext entfernt (waren ja eh nicht vorhanden :D)
+- Artikel, News und Galerie Statistiken lassen sich jetzt
+  nach Hits sortieren.
+- Bugfix: Slashes bei Newskommentar-Autoren entfernt
+- Bugfix: Downloads lassen sich jetzt mit 0KB größe eintragen
+
+***************** 31.08.08 *********************
+
+- Statistik umgestellt auf neues System
+- Neue Statistikauswertung für:
+    - Einzelne Besucher (Tag auswählbar in Seitenstatistik)
+    - Robots
+    - Referer (Tag auswählbar in Seitenstatistik)
+    - Browser
+    - Länder
+
+***************** 22.08.08 *********************
+
+- Template History hinzugefügt. Template Änderungen
+  werden jetzt mit Datum und Autor gespeichert und
+  können bei Bedarf wieder rückgängig gemacht werden.
+  Die Anzahl der gespeicherten Schritte kann in der
+  Konfiguration eingestellt werden.
+- Templates werden nach dem editieren direkt wieder
+  angezeigt im Adminbereich.
+- RSS Feed Cache hinzugefügt. Feed wir nur alle X
+  Minuten aktualisiert. (Einstellbar in der config.inc.php)
+- News Komentare sortierbar (neuste oder älteste 
+  zuerst). Einstellung in der Konfiguration
+
+******************* älter **********************
+
+- Template-Cache-System hinzugefügt (keine Datenbank-
+  abfragen mehr nötig für Templates, wenn aktiv)
+- komplette Änderung der Template Programmierung
+  im Ausgabemodul
+- Template im- und export hinzugefügt (als xml Datei)
+- PNG- und GIF-Transparenz support im Bildmanager 
+  hinzugefügt
+- Captcha Code entfernt und durch andere Sicherungs-
+  mechanismen ersetzt.
+- Kontaktformular hinzugefügt (mit Template)
+- Link Modul hinzugefügt
+- Artikel Index. In jedem Artikel kann jetzt die
+  Variable {index} benutzt werden. Diese wird durch eine
+  Liste aller anderen Artikel der selben Kategorie ersetzt.
+- Galeriebilder können nun auch per URL hochgalden werden
+- Neue Template Variable, die nur auf der Startseite
+  angezeigt wird.

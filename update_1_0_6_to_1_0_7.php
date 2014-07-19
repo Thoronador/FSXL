@@ -18,21 +18,21 @@ include('admin/inc/config.inc.php');
 include('admin/inc/functions.inc.php');
 
 // Datanbank Verbindung aufbauen
-@$db = new mysql($SQL[host], $SQL[user], $SQL[pass], $SQL[data]);
-if ($db->error[error]) // Aufbau nicht möglich
+@$db = new mysql($SQL['host'], $SQL['user'], $SQL['pass'], $SQL['data']);
+if ($db->error['error']) // Aufbau nicht möglich
 {
 	echo'Datenbankverbindung derzeit nicht möglich.';
 }
 else
 {
 	// Konfiguration laden
-	$FSXL[config] = createConfigArray();
+	$FSXL['config'] = createConfigArray();
 	
 	// Version Überprüfen
-	if ($FSXL[config][version] == "1.0.6")
+	if ($FSXL['config']['version'] == '1.0.6')
 	{
 		// Updates ausführen
-		
+
 		echo'<p/><li><b>Galerie Tabelle wird aktualisiert:</b></li>';
 		$chk = mysql_query("ALTER TABLE `$FSXL[tableset]_galleries` ADD `hidden` TINYINT NOT NULL DEFAULT '0'");
 		if ($chk) {

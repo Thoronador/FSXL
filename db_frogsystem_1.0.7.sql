@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 3.1.1
+-- version 3.4.11.1deb2+deb7u1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 11. September 2010 um 15:49
--- Server Version: 5.1.30
--- PHP-Version: 5.2.8
+-- Erstellungszeit: 19. Jul 2014 um 17:28
+-- Server Version: 5.5.37
+-- PHP-Version: 5.4.4-14+deb7u12
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -84,11 +85,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_article_cat` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=1 ;
-
---
--- Daten für Tabelle `fsxl_article_cat`
---
-
 
 -- --------------------------------------------------------
 
@@ -180,7 +176,7 @@ INSERT INTO `fsxl_config` (`name`, `value`) VALUES
 ('tagcloud_minsize', '8'),
 ('tagcloud_maxsize', '24'),
 ('use_safe_links', '1'),
-('version', '1.0.6'),
+('version', '1.0.7'),
 ('login_attempts', '5'),
 ('login_blocktime', '15'),
 ('admin_cookielogin', '1'),
@@ -207,14 +203,15 @@ INSERT INTO `fsxl_config` (`name`, `value`) VALUES
 ('vb_forum', '0'),
 ('news_selectcomments', '1'),
 ('news_vbselect', '0'),
-('crontime', '1283688993'),
+('crontime', '1405783003'),
 ('contacttojob', '1'),
 ('vb_prefix', '[NEWS]'),
 ('video_showall', '1'),
 ('counter_savetime', '2'),
 ('contest_perpage', '25'),
 ('shoplt_order', '1'),
-('ageratings', '16>22,18>24');
+('ageratings', '16>22,18>24'),
+('siteurl', '');
 
 -- --------------------------------------------------------
 
@@ -238,11 +235,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_contests` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Daten für Tabelle `fsxl_contests`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -261,11 +253,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_contest_entries` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Daten für Tabelle `fsxl_contest_entries`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -280,11 +267,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_contest_votes` (
   UNIQUE KEY `entry` (`entry`,`user`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Daten für Tabelle `fsxl_contest_votes`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -297,11 +279,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_contest_winner` (
   `entry` int(11) NOT NULL,
   UNIQUE KEY `contest` (`contest`,`position`,`entry`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Daten für Tabelle `fsxl_contest_winner`
---
-
 
 -- --------------------------------------------------------
 
@@ -323,7 +300,8 @@ CREATE TABLE IF NOT EXISTS `fsxl_counter_article` (
 --
 
 INSERT INTO `fsxl_counter_article` (`year`, `month`, `day`, `id`, `hits`) VALUES
-(2010, 9, 5, 1, 6);
+(2010, 9, 5, 1, 6),
+(2014, 7, 18, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -338,11 +316,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_counter_bots` (
   `agent` varchar(255) COLLATE latin1_general_ci NOT NULL,
   UNIQUE KEY `date` (`date`,`ip`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-
---
--- Daten für Tabelle `fsxl_counter_bots`
---
-
 
 -- --------------------------------------------------------
 
@@ -385,6 +358,8 @@ CREATE TABLE IF NOT EXISTS `fsxl_counter_news` (
 -- Daten für Tabelle `fsxl_counter_news`
 --
 
+INSERT INTO `fsxl_counter_news` (`year`, `month`, `day`, `id`, `hits`) VALUES
+(2014, 7, 19, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -414,7 +389,9 @@ INSERT INTO `fsxl_counter_stat` (`year`, `month`, `day`, `visits`, `hits`) VALUE
 (2010, 4, 5, 0, 0),
 (2010, 4, 7, 1, 11),
 (2010, 4, 9, 0, 0),
-(2010, 9, 5, 1, 107);
+(2010, 9, 5, 1, 107),
+(2014, 7, 18, 2, 18),
+(2014, 7, 19, 1, 5);
 
 -- --------------------------------------------------------
 
@@ -467,7 +444,7 @@ CREATE TABLE IF NOT EXISTS `fsxl_cronjobs` (
 --
 
 INSERT INTO `fsxl_cronjobs` (`id`, `date`, `order`) VALUES
-(2, 1283690793, 'updategalleries');
+(2, 1405784803, 'updategalleries');
 
 -- --------------------------------------------------------
 
@@ -511,11 +488,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_dl_cat` (
   `desc` varchar(255) COLLATE latin1_general_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=1 ;
-
---
--- Daten für Tabelle `fsxl_dl_cat`
---
-
 
 -- --------------------------------------------------------
 
@@ -650,11 +622,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_fscodes` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Daten für Tabelle `fsxl_fscodes`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -676,6 +643,7 @@ CREATE TABLE IF NOT EXISTS `fsxl_galleries` (
   `regonly` tinyint(4) NOT NULL,
   `pics` int(11) NOT NULL,
   `age` tinyint(4) NOT NULL DEFAULT '0',
+  `hidden` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `datum` (`datum`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=2 ;
@@ -684,8 +652,8 @@ CREATE TABLE IF NOT EXISTS `fsxl_galleries` (
 -- Daten für Tabelle `fsxl_galleries`
 --
 
-INSERT INTO `fsxl_galleries` (`id`, `name`, `text`, `datum`, `thumbx`, `thumby`, `color`, `cols`, `type`, `cat`, `zoneid`, `regonly`, `pics`, `age`) VALUES
-(1, 'Testgalerie', '', 1270208640, 160, 120, '000000', 3, 1, 0, 0, 0, 0, 17);
+INSERT INTO `fsxl_galleries` (`id`, `name`, `text`, `datum`, `thumbx`, `thumby`, `color`, `cols`, `type`, `cat`, `zoneid`, `regonly`, `pics`, `age`, `hidden`) VALUES
+(1, 'Testgalerie', '', 1270208640, 160, 120, '000000', 3, 1, 0, 0, 0, 0, 17, 0);
 
 -- --------------------------------------------------------
 
@@ -706,11 +674,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_gallerypics` (
   KEY `position` (`position`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=5 ;
 
---
--- Daten für Tabelle `fsxl_gallerypics`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -725,11 +688,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_gallery_cat` (
   UNIQUE KEY `name` (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=1 ;
 
---
--- Daten für Tabelle `fsxl_gallery_cat`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -742,11 +700,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_gallery_potm` (
   `gallery` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=1 ;
-
---
--- Daten für Tabelle `fsxl_gallery_potm`
---
-
 
 -- --------------------------------------------------------
 
@@ -763,11 +716,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_gallery_timed` (
   `enddate` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Daten für Tabelle `fsxl_gallery_timed`
---
-
 
 -- --------------------------------------------------------
 
@@ -789,11 +737,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_images` (
   `autor` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=1 ;
-
---
--- Daten für Tabelle `fsxl_images`
---
-
 
 -- --------------------------------------------------------
 
@@ -861,11 +804,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_link` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=1 ;
 
---
--- Daten für Tabelle `fsxl_link`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -880,11 +818,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_link_cat` (
   UNIQUE KEY `name` (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=1 ;
 
---
--- Daten für Tabelle `fsxl_link_cat`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -898,11 +831,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_link_subcat` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Daten für Tabelle `fsxl_link_subcat`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -915,11 +843,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_logins` (
   `trys` int(11) NOT NULL,
   UNIQUE KEY `ip` (`ip`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-
---
--- Daten für Tabelle `fsxl_logins`
---
-
 
 -- --------------------------------------------------------
 
@@ -1081,11 +1004,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_news_comments` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=1 ;
 
---
--- Daten für Tabelle `fsxl_news_comments`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -1101,11 +1019,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_news_links` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=1 ;
 
---
--- Daten für Tabelle `fsxl_news_links`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -1116,11 +1029,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_news_spamblock` (
   `ip` varchar(255) COLLATE latin1_general_ci NOT NULL,
   `date` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-
---
--- Daten für Tabelle `fsxl_news_spamblock`
---
-
 
 -- --------------------------------------------------------
 
@@ -1139,11 +1047,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_news_submit` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
---
--- Daten für Tabelle `fsxl_news_submit`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -1160,11 +1063,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_poll` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=1 ;
 
---
--- Daten für Tabelle `fsxl_poll`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -1176,11 +1074,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_polltozone` (
   `zoneid` int(11) NOT NULL,
   UNIQUE KEY `pollid` (`pollid`,`zoneid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Daten für Tabelle `fsxl_polltozone`
---
-
 
 -- --------------------------------------------------------
 
@@ -1197,11 +1090,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_poll_answers` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=1 ;
 
---
--- Daten für Tabelle `fsxl_poll_answers`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -1215,11 +1103,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_poll_iplist` (
   KEY `ip` (`ip`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
---
--- Daten für Tabelle `fsxl_poll_iplist`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -1231,11 +1114,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_poll_userlist` (
   `user` int(11) NOT NULL,
   UNIQUE KEY `poll` (`poll`,`user`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-
---
--- Daten für Tabelle `fsxl_poll_userlist`
---
-
 
 -- --------------------------------------------------------
 
@@ -1252,11 +1130,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_rewritemap` (
   UNIQUE KEY `UNIQUE` (`from`,`zone`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Daten für Tabelle `fsxl_rewritemap`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -1268,11 +1141,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_search_iplist` (
   `date` int(11) NOT NULL,
   UNIQUE KEY `ip` (`ip`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-
---
--- Daten für Tabelle `fsxl_search_iplist`
---
-
 
 -- --------------------------------------------------------
 
@@ -1286,11 +1154,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_search_words` (
   `date` int(11) NOT NULL,
   UNIQUE KEY `word` (`word`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-
---
--- Daten für Tabelle `fsxl_search_words`
---
-
 
 -- --------------------------------------------------------
 
@@ -1309,11 +1172,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_shoplt` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=1 ;
 
---
--- Daten für Tabelle `fsxl_shoplt`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -1327,11 +1185,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_shoplt_cat` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=1 ;
-
---
--- Daten für Tabelle `fsxl_shoplt_cat`
---
-
 
 -- --------------------------------------------------------
 
@@ -1831,11 +1684,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_ticker` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=1 ;
 
---
--- Daten für Tabelle `fsxl_ticker`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -1850,11 +1698,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_ticker_text` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `UNIQUE` (`ticker`,`date`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=1 ;
-
---
--- Daten für Tabelle `fsxl_ticker_text`
---
-
 
 -- --------------------------------------------------------
 
@@ -1877,11 +1720,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_tplvars` (
   UNIQUE KEY `name` (`name`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=8 ;
 
---
--- Daten für Tabelle `fsxl_tplvars`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -1894,11 +1732,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_tplvars_code` (
   `code` text COLLATE latin1_general_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=11 ;
-
---
--- Daten für Tabelle `fsxl_tplvars_code`
---
-
 
 -- --------------------------------------------------------
 
@@ -1934,11 +1767,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_useraccess` (
   `page` varchar(255) COLLATE latin1_general_ci NOT NULL,
   UNIQUE KEY `userid` (`userid`,`mod`,`page`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-
---
--- Daten für Tabelle `fsxl_useraccess`
---
-
 
 -- --------------------------------------------------------
 
@@ -1982,11 +1810,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_user_groupaccess` (
   UNIQUE KEY `group` (`group`,`mod`,`page`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
---
--- Daten für Tabelle `fsxl_user_groupaccess`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -1998,11 +1821,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_user_groupconnect` (
   `group` int(11) NOT NULL,
   UNIQUE KEY `user` (`user`,`group`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-
---
--- Daten für Tabelle `fsxl_user_groupconnect`
---
-
 
 -- --------------------------------------------------------
 
@@ -2016,11 +1834,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_user_groups` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=1 ;
-
---
--- Daten für Tabelle `fsxl_user_groups`
---
-
 
 -- --------------------------------------------------------
 
@@ -2060,11 +1873,6 @@ CREATE TABLE IF NOT EXISTS `fsxl_video_cat` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
---
--- Daten für Tabelle `fsxl_video_cat`
---
-
 
 -- --------------------------------------------------------
 
@@ -2109,6 +1917,8 @@ CREATE TABLE IF NOT EXISTS `fsxl_zones` (
   `style` int(10) unsigned NOT NULL,
   `url` varchar(255) COLLATE latin1_general_ci NOT NULL,
   `page` varchar(255) COLLATE latin1_general_ci NOT NULL,
+  `single` tinyint(4) NOT NULL DEFAULT '0',
+  `headlines` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `url` (`url`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=10 ;
@@ -2117,5 +1927,9 @@ CREATE TABLE IF NOT EXISTS `fsxl_zones` (
 -- Daten für Tabelle `fsxl_zones`
 --
 
-INSERT INTO `fsxl_zones` (`id`, `name`, `style`, `url`, `page`) VALUES
-(1, 'GreenZone', 1, '', '');
+INSERT INTO `fsxl_zones` (`id`, `name`, `style`, `url`, `page`, `single`, `headlines`) VALUES
+(1, 'GreenZone', 1, '', '', 0, 1);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
